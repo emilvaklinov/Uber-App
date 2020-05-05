@@ -97,9 +97,11 @@
                     </view>
                     <connections>
                         <outlet property="bottomButton" destination="Qft-T9-1yh" id="eHT-24-nxe"/>
+                        <outlet property="driverLabel" destination="boY-Zk-ZVO" id="Alf-NB-k4Y"/>
                         <outlet property="emailTextField" destination="HVc-w5-5WJ" id="Ita-0f-GQr"/>
                         <outlet property="passwordTextField" destination="lkI-cM-ZZi" id="zhp-Ss-7Dd"/>
                         <outlet property="riderDriverSwitch" destination="Zls-B9-uBc" id="Ag3-Ja-o0C"/>
+                        <outlet property="riderLabel" destination="Qlr-Co-gBe" id="aa4-nL-1z2"/>
                         <outlet property="topButton" destination="2mH-P0-ZU0" id="6Mx-tT-NTW"/>
                     </connections>
                 </viewController>
