@@ -28,66 +28,60 @@ class ViewController: UIViewController {
     
     @IBAction func topTapped(_ sender: Any) {
         // checking for errors
-        if emailTextField.text == "" || passwordTextField.text == "" {
-            // Display alert
-            displayAlert(title: "Missing information", message: "You must provide both an email and password")
-        } else {
-            if let email = emailTextField.text {
-                if let password = passwordTextField.text {
-                    
-                    
-                    
-                    if signUpMode {
-                        // SIGN UP
-                        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-                            if error != nil {
-                                self.displayAlert(title: "Error", message: error!.localizedDescription)
+ if emailTextField.text == "" || passwordTextField.text == "" {
+                    displayAlert(title: "Missing Information", message: "You must provide both a email and password")
+                } else {
+                    if let email = emailTextField.text {
+                        if let password = passwordTextField.text {
+                            if signUpMode {
+                                // SIGN UP
+                                Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+                                    if error != nil {
+                                        self.displayAlert(title: "Error", message: error!.localizedDescription)
+                                    } else {
+                                        print("Sign Up Success")
+                                        self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                                    }
+                                })
                             } else {
-                                print("Sign up Success")
-                                self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                                // LOG IN
+                                Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                                    if error != nil {
+                                        self.displayAlert(title: "Error", message: error!.localizedDescription)
+                                    } else {
+                                        print("Log In Success")
+                                        self.performSegue(withIdentifier: "riderSegue", sender: nil)
+                                    }
+                                })
                             }
-                        })
-                    } else {
-                        // LOG IN
-                      Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-                            if error != nil {
-                                self.displayAlert(title: "Error", message: error!.localizedDescription)
-                            } else {
-                                print("Log In Success")
-                                self.performSegue(withIdentifier: "riderSegue", sender: nil)
-                            }
-                        })
                         }
                     }
                 }
             }
             
-        
-    }
-    // Dispaly alert if there is error
-    func displayAlert(title:String, message:String) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alertController, animated: true, completion: nil)
-    }
-    @IBAction func bottomTapped(_ sender: Any) {
-        if signUpMode {
-            topButton.setTitle("Log In", for: .normal)
-            bottomButton.setTitle("Switch to Sign Up", for: .normal)
-            riderLabel.isHidden = true
-            driverLabel.isHidden = true
-            riderDriverSwitch.isHidden = true
-            signUpMode = false
-        } else {
-            topButton.setTitle("Sign Up", for: .normal)
-            bottomButton.setTitle("Switch to Log In", for: .normal)
-            riderLabel.isHidden = false
-            driverLabel.isHidden = false
-            riderDriverSwitch.isHidden = false
-            signUpMode = true
+            func displayAlert(title:String, message:String) {
+                let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+            }
+            
+            @IBAction func bottomTapped(_ sender: Any) {
+                if signUpMode {
+                    topButton.setTitle("Log In", for: .normal)
+                    bottomButton.setTitle("Switch to Sign Up", for: .normal)
+                    riderLabel.isHidden = true
+                    driverLabel.isHidden = true
+                    riderDriverSwitch.isHidden = true
+                    signUpMode = false
+                } else {
+                    topButton.setTitle("Sign Up", for: .normal)
+                    bottomButton.setTitle("Switch to Log In", for: .normal)
+                    riderLabel.isHidden = false
+                    driverLabel.isHidden = false
+                    riderDriverSwitch.isHidden = false
+                    signUpMode = true
+                }
+            }
+            
         }
-    }
-    
-    
-}
 
