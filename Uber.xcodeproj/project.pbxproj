@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		48A56F052460C73C00487DB2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48A56F042460C73C00487DB2 /* Assets.xcassets */; };
 		48A56F082460C73C00487DB2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48A56F062460C73C00487DB2 /* LaunchScreen.storyboard */; };
 		48A56F102460C8EF00487DB2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 48A56F0F2460C8EF00487DB2 /* GoogleService-Info.plist */; };
+		48A56F122461AC9E00487DB2 /* RiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A56F112461AC9E00487DB2 /* RiderViewController.swift */; };
 		623C16520F51FAD17F2B4BDD /* Pods_Uber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F5CCB281123892F472E05F /* Pods_Uber.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 		48A56F072460C73C00487DB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48A56F092460C73C00487DB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48A56F0F2460C8EF00487DB2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		48A56F112461AC9E00487DB2 /* RiderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RiderViewController.swift; sourceTree = "<group>"; };
 		7ECAECCF090CC86F64622C13 /* Pods-Uber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uber.debug.xcconfig"; path = "Target Support Files/Pods-Uber/Pods-Uber.debug.xcconfig"; sourceTree = "<group>"; };
 		E0F5CCB281123892F472E05F /* Pods_Uber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Uber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 				48A56F062460C73C00487DB2 /* LaunchScreen.storyboard */,
 				48A56F0F2460C8EF00487DB2 /* GoogleService-Info.plist */,
 				48A56F092460C73C00487DB2 /* Info.plist */,
+				48A56F112461AC9E00487DB2 /* RiderViewController.swift */,
 			);
 			path = Uber;
 			sourceTree = "<group>";
@@ -91,7 +94,6 @@
 				7ECAECCF090CC86F64622C13 /* Pods-Uber.debug.xcconfig */,
 				174140D86D54802D512F76CD /* Pods-Uber.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -212,6 +214,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				48A56F002460C73B00487DB2 /* ViewController.swift in Sources */,
+				48A56F122461AC9E00487DB2 /* RiderViewController.swift in Sources */,
 				48A56EFC2460C73A00487DB2 /* AppDelegate.swift in Sources */,
 				48A56EFE2460C73B00487DB2 /* SceneDelegate.swift in Sources */,
 			);

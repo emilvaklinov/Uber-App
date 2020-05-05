@@ -21,12 +21,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your@mail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HVc-w5-5WJ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="rider@gmail.com" borderStyle="roundedRect" placeholder="your@mail.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HVc-w5-5WJ">
                                 <rect key="frame" x="20" y="52" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lkI-cM-ZZi">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="abc123" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lkI-cM-ZZi">
                                 <rect key="frame" x="20" y="94" width="335" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -103,11 +103,65 @@
                         <outlet property="riderDriverSwitch" destination="Zls-B9-uBc" id="Ag3-Ja-o0C"/>
                         <outlet property="riderLabel" destination="Qlr-Co-gBe" id="aa4-nL-1z2"/>
                         <outlet property="topButton" destination="2mH-P0-ZU0" id="6Mx-tT-NTW"/>
+                        <segue destination="Mtk-Ej-Udc" kind="presentation" identifier="riderSegue" id="Qeu-G7-igw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="46" y="65"/>
+        </scene>
+        <!--Rider View Controller-->
+        <scene sceneID="Ybw-Wi-MIS">
+            <objects>
+                <viewController id="EjH-Rd-BKt" customClass="RiderViewController" customModule="Uber" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U0q-iC-AdV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="MB7-eb-Nib">
+                                <rect key="frame" x="20" y="76" width="335" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MB7-eb-Nib" secondAttribute="height" multiplier="1:1" id="1Bf-OJ-Gcu"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ff9-Db-1rh">
+                                <rect key="frame" x="145.5" y="431" width="84" height="30"/>
+                                <state key="normal" title="Call an Uber"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="IfZ-34-emj" firstAttribute="trailing" secondItem="MB7-eb-Nib" secondAttribute="trailing" constant="20" id="0Rt-1z-dCn"/>
+                            <constraint firstItem="MB7-eb-Nib" firstAttribute="leading" secondItem="IfZ-34-emj" secondAttribute="leading" constant="20" id="9fo-On-9lF"/>
+                            <constraint firstItem="MB7-eb-Nib" firstAttribute="top" secondItem="IfZ-34-emj" secondAttribute="top" constant="20" id="ZfY-7l-Tbu"/>
+                            <constraint firstItem="Ff9-Db-1rh" firstAttribute="centerX" secondItem="U0q-iC-AdV" secondAttribute="centerX" id="wiF-Ds-Y5B"/>
+                            <constraint firstItem="Ff9-Db-1rh" firstAttribute="top" secondItem="MB7-eb-Nib" secondAttribute="bottom" constant="20" id="zo5-4I-tTi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IfZ-34-emj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Hgv-I6-kHF"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p51-wN-Qkz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1820" y="63"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="b1O-0W-ye6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mtk-Ej-Udc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SLD-pK-rZo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EjH-Rd-BKt" kind="relationship" relationship="rootViewController" id="l6m-P3-gaw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n8n-Ym-WiB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="905" y="64"/>
         </scene>
     </scenes>
 </document>
