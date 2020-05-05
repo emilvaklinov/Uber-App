@@ -77,15 +77,31 @@
 			children = (
 				48A56EFB2460C73A00487DB2 /* AppDelegate.swift */,
 				48A56EFD2460C73A00487DB2 /* SceneDelegate.swift */,
-				48A56EFF2460C73B00487DB2 /* ViewController.swift */,
-				48A56F012460C73B00487DB2 /* Main.storyboard */,
+				48A56F132461ACF000487DB2 /* Controllers */,
+				48A56F142461AD0400487DB2 /* Views */,
 				48A56F042460C73C00487DB2 /* Assets.xcassets */,
-				48A56F062460C73C00487DB2 /* LaunchScreen.storyboard */,
 				48A56F0F2460C8EF00487DB2 /* GoogleService-Info.plist */,
 				48A56F092460C73C00487DB2 /* Info.plist */,
-				48A56F112461AC9E00487DB2 /* RiderViewController.swift */,
 			);
 			path = Uber;
+			sourceTree = "<group>";
+		};
+		48A56F132461ACF000487DB2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				48A56EFF2460C73B00487DB2 /* ViewController.swift */,
+				48A56F112461AC9E00487DB2 /* RiderViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		48A56F142461AD0400487DB2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				48A56F012460C73B00487DB2 /* Main.storyboard */,
+				48A56F062460C73C00487DB2 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A6C96F512C20DFD7AE83B6A6 /* Pods */ = {

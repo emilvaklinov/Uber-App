@@ -127,6 +127,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ff9-Db-1rh">
                                 <rect key="frame" x="145.5" y="431" width="84" height="30"/>
                                 <state key="normal" title="Call an Uber"/>
+                                <connections>
+                                    <action selector="callUberTapped:" destination="EjH-Rd-BKt" eventType="touchUpInside" id="oOO-Ad-60t"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -139,11 +142,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IfZ-34-emj"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Hgv-I6-kHF"/>
+                    <navigationItem key="navigationItem" id="Hgv-I6-kHF">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="ZzA-LH-3K2">
+                            <connections>
+                                <action selector="logoutTapped:" destination="EjH-Rd-BKt" id="3fj-1z-Isa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="callAnUberButton" destination="Ff9-Db-1rh" id="yMW-hQ-FR2"/>
+                        <outlet property="uberMap" destination="MB7-eb-Nib" id="cQQ-ly-5kW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p51-wN-Qkz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="63"/>
+            <point key="canvasLocation" x="1740" y="63"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="b1O-0W-ye6">
