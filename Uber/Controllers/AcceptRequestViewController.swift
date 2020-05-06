@@ -14,6 +14,7 @@ class AcceptRequestViewController: UIViewController {
     @IBOutlet weak var map: MKMapView!
     
     var requestLocation = CLLocationCoordinate2D()
+    var requestEmail = ""
     
     override func viewDidLoad() {
            super.viewDidLoad()

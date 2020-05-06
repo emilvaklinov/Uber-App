@@ -12,7 +12,7 @@ import FirebaseDatabase
 import MapKit
 
 class DriverTableViewController: UITableViewController, CLLocationManagerDelegate {
-
+    
     
     var rideRequest : [DataSnapshot] = []
     var locationManager = CLLocationManager()
@@ -21,7 +21,7 @@ class DriverTableViewController: UITableViewController, CLLocationManagerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       locationManager.delegate = self
+        locationManager.delegate = self
         // Precised location
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
@@ -35,7 +35,7 @@ class DriverTableViewController: UITableViewController, CLLocationManagerDelegat
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
             self.tableView.reloadData()
         }
-
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -43,23 +43,23 @@ class DriverTableViewController: UITableViewController, CLLocationManagerDelegat
             driverLocation = coord
         }
     }
-
+    
     // MARK: - Table view data source
-
-
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return rideRequest.count
     }
-
+    
     @IBAction func logoutTapped(_ sender: Any) {
         try? Auth.auth().signOut()
         navigationController?.dismiss(animated: true, completion: nil)
     }
-   
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "rideRequestCell", for: indexPath)
-
+        
         let snapshot = rideRequest[indexPath.row]
         // Getting the drivers location
         if let rideRequestDictionary = snapshot.value as? [String:AnyObject] {
@@ -74,14 +74,34 @@ class DriverTableViewController: UITableViewController, CLLocationManagerDelegat
                         cell.textLabel?.text = "\(email) - \(roundedDistance) km away"
                     }
                 }
-         
+                
             }
         }
-    
+        
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "acceptRequestSegue", sender: nil)
+        let snapshot = rideRequest[indexPath.row]
+        performSegue(withIdentifier: "acceptRequestSegue", sender: snapshot)
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let acceptVC = segue.destination as? AcceptRequestViewController {
+            
+            if let snapshot = sender as? DataSnapshot {
+                if let rideRequestDictionary = snapshot.value as? [String:AnyObject] {
+                    if let email = rideRequestDictionary["email"] as? String {
+                        if let lat = rideRequestDictionary["lat"] as? Double {
+                            if let lon = rideRequestDictionary["lon"] as? Double {
+                                acceptVC.requestEmail = email
+                                
+                                let location = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                                acceptVC.requestLocation = location
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
