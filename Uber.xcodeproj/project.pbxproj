@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4865B2212462298500AF1DA7 /* DriverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4865B2202462298500AF1DA7 /* DriverTableViewController.swift */; };
+		4865B2232462DFDD00AF1DA7 /* AcceptRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4865B2222462DFDD00AF1DA7 /* AcceptRequestViewController.swift */; };
 		48A56EFC2460C73A00487DB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A56EFB2460C73A00487DB2 /* AppDelegate.swift */; };
 		48A56EFE2460C73B00487DB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A56EFD2460C73A00487DB2 /* SceneDelegate.swift */; };
 		48A56F002460C73B00487DB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A56EFF2460C73B00487DB2 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		174140D86D54802D512F76CD /* Pods-Uber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Uber.release.xcconfig"; path = "Target Support Files/Pods-Uber/Pods-Uber.release.xcconfig"; sourceTree = "<group>"; };
 		4865B2202462298500AF1DA7 /* DriverTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverTableViewController.swift; sourceTree = "<group>"; };
+		4865B2222462DFDD00AF1DA7 /* AcceptRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptRequestViewController.swift; sourceTree = "<group>"; };
 		48A56EF82460C73A00487DB2 /* Uber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Uber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48A56EFB2460C73A00487DB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		48A56EFD2460C73A00487DB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				48A56EFF2460C73B00487DB2 /* ViewController.swift */,
 				48A56F112461AC9E00487DB2 /* RiderViewController.swift */,
 				4865B2202462298500AF1DA7 /* DriverTableViewController.swift */,
+				4865B2222462DFDD00AF1DA7 /* AcceptRequestViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				48A56F122461AC9E00487DB2 /* RiderViewController.swift in Sources */,
 				4865B2212462298500AF1DA7 /* DriverTableViewController.swift in Sources */,
 				48A56EFC2460C73A00487DB2 /* AppDelegate.swift in Sources */,
+				4865B2232462DFDD00AF1DA7 /* AcceptRequestViewController.swift in Sources */,
 				48A56EFE2460C73B00487DB2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

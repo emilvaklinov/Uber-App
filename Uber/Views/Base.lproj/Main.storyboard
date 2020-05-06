@@ -37,10 +37,54 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="8YD-N4-eAC" kind="show" identifier="acceptRequestSegue" id="F5z-UQ-Vhv"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvr-Aj-B2k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1844" y="865.81709145427294"/>
+        </scene>
+        <!--Accept Request View Controller-->
+        <scene sceneID="NVD-a8-CMS">
+            <objects>
+                <viewController id="8YD-N4-eAC" customClass="AcceptRequestViewController" customModule="Uber" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xy8-gt-Evi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="D2b-st-TPT">
+                                <rect key="frame" x="20" y="76" width="335" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="D2b-st-TPT" secondAttribute="height" multiplier="1:1" id="oli-Kj-MU9"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7H-XJ-3VR">
+                                <rect key="frame" x="133" y="438" width="109" height="30"/>
+                                <state key="normal" title="Accept Request"/>
+                                <connections>
+                                    <action selector="acceptTapped:" destination="8YD-N4-eAC" eventType="touchUpInside" id="Jmc-1D-Zx0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="D2b-st-TPT" firstAttribute="leading" secondItem="zMo-iP-aBk" secondAttribute="leading" constant="20" id="Cqi-AG-pLQ"/>
+                            <constraint firstItem="D2b-st-TPT" firstAttribute="top" secondItem="zMo-iP-aBk" secondAttribute="top" constant="20" id="ak4-bb-RZ2"/>
+                            <constraint firstItem="k7H-XJ-3VR" firstAttribute="top" secondItem="D2b-st-TPT" secondAttribute="bottom" constant="27" id="c82-Vs-w4q"/>
+                            <constraint firstItem="zMo-iP-aBk" firstAttribute="trailing" secondItem="D2b-st-TPT" secondAttribute="trailing" constant="20" id="gX2-ET-D9S"/>
+                            <constraint firstItem="k7H-XJ-3VR" firstAttribute="centerX" secondItem="Xy8-gt-Evi" secondAttribute="centerX" id="q5U-HK-j1X"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zMo-iP-aBk"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hsi-bj-zeJ"/>
+                    <connections>
+                        <outlet property="map" destination="D2b-st-TPT" id="eI1-76-vBm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ob3-o7-tEv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2695.1999999999998" y="850.52473763118451"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
