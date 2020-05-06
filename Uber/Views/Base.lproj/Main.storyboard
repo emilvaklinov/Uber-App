@@ -38,7 +38,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="8YD-N4-eAC" kind="show" identifier="acceptRequestSegue" id="F5z-UQ-Vhv"/>
+                        <segue destination="8YD-N4-eAC" kind="show" identifier="acceptSegue" id="F5z-UQ-Vhv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pvr-Aj-B2k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
