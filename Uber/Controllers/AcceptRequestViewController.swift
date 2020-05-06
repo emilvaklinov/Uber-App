@@ -19,7 +19,14 @@ class AcceptRequestViewController: UIViewController {
     override func viewDidLoad() {
            super.viewDidLoad()
 
-           // Do any additional setup after loading the view.
+           //Setting the Map
+        let region = MKCoordinateRegion(center: requestLocation, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        map.setRegion(region, animated: false)
+        
+        let annotation = MKPointAnnotation()
+            annotation.coordinate = requestLocation
+        annotation.title = requestEmail
+        map.addAnnotation(annotation)
        }
       
     @IBAction func acceptTapped(_ sender: Any) {
